@@ -1,0 +1,33 @@
+name: Build executable file
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build archive
+        run: |
+          xcodebuild -scheme PCL.Mac.Daemon \
+            -configuration Release \
+            -destination 'platform=macOS' \
+            -archivePath build \
+            clean archive
+
+      - name: Rename executable
+        run: |
+          mkdir -p upload
+          mv build.xcarchive/Products/usr/local/bin/PCL.Mac.Daemon upload/daemon
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: daemon
+          path: upload/daemon
