@@ -48,7 +48,7 @@ func onProcessExit() throws {
                 }
             }
         }
-        Thread.sleep(forTimeInterval: 0.5)
+        Thread.sleep(forTimeInterval: 1)
     }
     
     if !isCrash {

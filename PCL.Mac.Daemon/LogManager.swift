@@ -18,7 +18,7 @@ final class LogStore {
     
     func append(_ message: String, _ level: String, _ caller: String) {
         appendRaw(
-            "\(dateFormatter.string(from: Date())) [\(level)] \(caller): \(message)"
+            "[DAEMON] \(dateFormatter.string(from: Date())) [\(level)] \(caller): \(message)"
         )
     }
     
