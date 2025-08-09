@@ -40,8 +40,8 @@ func onProcessExit() throws {
             if report.lastPathComponent.wholeMatch(of: /PCL\.Mac-\d{4}-\d{2}-\d{2}-\d{6}\.ips/) != nil {
                 let resourceValues = try report.resourceValues(forKeys: [.creationDateKey])
                 if let creationDate = resourceValues.creationDate,
-                   abs(creationDate.timeIntervalSince(exitTime)) < 1 {
-                    log("报告 \(report.lastPathComponent) 与检测到进程退出的时间间隔小于 1s，已确认崩溃")
+                   abs(creationDate.timeIntervalSince(exitTime)) < 10 {
+                    log("报告 \(report.lastPathComponent) 与检测到进程退出的时间间隔小于 10s，已确认崩溃")
                     reportURL = report
                     isCrash = true
                     break
