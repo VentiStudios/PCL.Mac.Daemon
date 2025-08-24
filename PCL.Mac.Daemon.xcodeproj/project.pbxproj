@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		ECD576302E5A917600BDDAE2 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = ECD5762F2E5A917600BDDAE2 /* ArgumentParser */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		EC7D54D32E4369AD0074C206 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECD576302E5A917600BDDAE2 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +82,7 @@
 			);
 			name = PCL.Mac.Daemon;
 			packageProductDependencies = (
+				ECD5762F2E5A917600BDDAE2 /* ArgumentParser */,
 			);
 			productName = PCL.Mac.Daemon;
 			productReference = EC7D54D52E4369AD0074C206 /* PCL.Mac.Daemon */;
@@ -106,6 +112,9 @@
 			);
 			mainGroup = EC7D54CC2E4369AD0074C206;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				ECD5762E2E5A917600BDDAE2 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EC7D54D62E4369AD0074C206 /* Products */;
 			projectDirPath = "";
@@ -287,6 +296,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ECD5762E2E5A917600BDDAE2 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ECD5762F2E5A917600BDDAE2 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECD5762E2E5A917600BDDAE2 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EC7D54CD2E4369AD0074C206 /* Project object */;
 }

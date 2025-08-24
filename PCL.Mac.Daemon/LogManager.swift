@@ -10,6 +10,7 @@ import Foundation
 final class LogStore {
     let dateFormatter = DateFormatter()
     static let shared = LogStore()
+    static var silent: Bool = false
 
     private init() {
         dateFormatter.dateFormat = "[yyyy-MM-dd] [HH:mm:ss.SSS]"
@@ -23,7 +24,9 @@ final class LogStore {
     }
     
     func appendRaw(_ message: String) {
-        print(message)
+        if !Self.silent {
+            print(message)
+        }
     }
 }
 
